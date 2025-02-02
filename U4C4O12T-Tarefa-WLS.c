@@ -3,11 +3,11 @@
 #include "hardware/pio.h"
 #include "hardware/gpio.h"
 #include "hardware/timer.h"
-#include "ws2812.pio.h"
+#include "U4C4O12T-Tarefa-WLS.pio.h"
 
 // Definições de pinos
 #define LED_RED 13
-#define LED_WS2812 7
+#define LED_U4C4O12T-Tarefa-WLS 7
 #define BUTTON_A 5
 #define BUTTON_B 6
 
@@ -16,7 +16,7 @@ volatile uint32_t last_time_a = 0;
 volatile uint32_t last_time_b = 0;
 volatile int numero_atual = 0; // Número a ser exibido na matriz
 
-// Buffer da matriz WS2812
+// Buffer da matriz U4C4O12T-Tarefa-WLS
 #define NUM_PIXELS 25
 uint32_t led_buffer[NUM_PIXELS] = {0};
 PIO pio = pio0;
@@ -86,9 +86,9 @@ int main() {
     gpio_set_irq_enabled_with_callback(BUTTON_A, GPIO_IRQ_EDGE_FALL, true, &gpio_irq_handler);
     gpio_set_irq_enabled_with_callback(BUTTON_B, GPIO_IRQ_EDGE_FALL, true, &gpio_irq_handler);
 
-    // Inicialização da matriz WS2812
-    int offset = pio_add_program(pio, &ws2812_program);
-    ws2812_program_init(pio, sm, offset, LED_WS2812, 800000, false);
+    // Inicialização da matriz U4C4O12T-Tarefa-WLS
+    int offset = pio_add_program(pio, &U4C4O12T-Tarefa-WLS_program);
+    U4C4O12T-Tarefa-WLS_program_init(pio, sm, offset, LED_U4C4O12T-Tarefa-WLS, 800000, false);
 
     // Loop principal (LED piscando)
     while (true) {
