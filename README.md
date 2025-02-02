@@ -53,16 +53,18 @@ O projeto é dividido nos seguintes arquivos:
 
 3. **Gravar no Raspberry Pi Pico**:
     - Conecte a placa em modo de boot (BOOTSEL).
-    -  Copie o arquivo .uf2 gerado para a unidade correspondente ao Pico.
+    - Copie o arquivo .uf2 gerado para a unidade correspondente ao Pico.
 
 4. **Executar e testar**:
     - Verifique a exibição dos números na matriz.
     - Teste os botões para incremento/decremento.
     - Observe o LED vermelho piscando corretamente.
 
-#Vídeo de demonstração
-[Simulação no BitDogLab](#)
-#Autores
 
+## Vídeo de demonstração
+[Simulação no BitDogLab](#)
+
+
+## Autores
     Aline Machado – Implementação e testes
     Colaboradores – Comunidade BitDogLab e entusiastas de sistemas embarcados.
