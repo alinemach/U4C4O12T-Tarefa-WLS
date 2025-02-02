@@ -40,13 +40,20 @@ add_executable(U4C4O12T-Tarefa-WLS U4C4O12T-Tarefa-WLS.c )
 pico_set_program_name(U4C4O12T-Tarefa-WLS "U4C4O12T-Tarefa-WLS")
 pico_set_program_version(U4C4O12T-Tarefa-WLS "0.1")
 
+#Inserido
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/generated)
+pico_generate_pio_header(U4C4O12T-Tarefa-WLS ${CMAKE_CURRENT_LIST_DIR}/U4C4O12T-Tarefa-WLS.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/generated)
+target_sources(U4C4O12T-Tarefa-WLS PRIVATE U4C4O12T-Tarefa-WLS.c)
+
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(U4C4O12T-Tarefa-WLS 1)
 pico_enable_stdio_usb(U4C4O12T-Tarefa-WLS 0)
 
 # Add the standard library to the build
-target_link_libraries(U4C4O12T-Tarefa-WLS
-        pico_stdlib)
+target_link_libraries(U4C4O12T-Tarefa-WLS PRIVATE
+        pico_stdlib 
+        hardware_pio
+        )
 
 # Add the standard include files to the build
 target_include_directories(U4C4O12T-Tarefa-WLS PRIVATE
@@ -54,8 +61,7 @@ target_include_directories(U4C4O12T-Tarefa-WLS PRIVATE
 )
 
 # Add any user requested libraries
-target_link_libraries(U4C4O12T-Tarefa-WLS 
-        
+target_link_libraries(U4C4O12T-Tarefa-WLS
         )
 
 pico_add_extra_outputs(U4C4O12T-Tarefa-WLS)
