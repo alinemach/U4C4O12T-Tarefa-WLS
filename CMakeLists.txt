@@ -40,10 +40,10 @@ pico_set_program_name(U4C4O12T_Tarefa_WLS "U4C4O12T_Tarefa_WLS")
 pico_set_program_version(U4C4O12T_Tarefa_WLS "0.1")
 
 # Criar diretório para arquivos gerados
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/generated)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/output)
 
 # Gerar cabeçalho a partir do U4C4O12T_Tarefa_WLS.pio
-pico_generate_pio_header(U4C4O12T_Tarefa_WLS ${CMAKE_CURRENT_LIST_DIR}/U4C4O12T_Tarefa_WLS.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/generated)
+pico_generate_pio_header(U4C4O12T_Tarefa_WLS ${CMAKE_CURRENT_LIST_DIR}/U4C4O12T_Tarefa_WLS.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/output)
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(U4C4O12T_Tarefa_WLS 1)
@@ -58,7 +58,7 @@ target_link_libraries(U4C4O12T_Tarefa_WLS PRIVATE
 # Adicionar diretórios de inclusão
 target_include_directories(U4C4O12T_Tarefa_WLS PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
-        ${CMAKE_CURRENT_LIST_DIR}/generated
+        ${CMAKE_CURRENT_LIST_DIR}/output
 )
 
 # Adicionar os arquivos de código necessários
