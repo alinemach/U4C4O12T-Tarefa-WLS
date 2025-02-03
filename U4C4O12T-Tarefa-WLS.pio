@@ -1,6 +1,6 @@
 .pio_version 0 // only requires PIO version 0
 
-.program U4C4O12T-Tarefa-WLS
+.program U4C4O12T_Tarefa_WLS
 .side_set 1
 
 .define public T1 3
